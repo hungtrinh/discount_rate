@@ -1,5 +1,5 @@
 <?php
-
+require __DIR__ . "/../src/DiscountRate.php";
 Use PHPUnit\Framework\TestCase;
 
 class DiscountRateTest extends TestCase

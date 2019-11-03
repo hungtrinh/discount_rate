@@ -12,5 +12,8 @@
             "email": "trinhduchung@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "scripts": {
+        "test": "phpunit --testdox tests"
+    }
 }
