@@ -24,4 +24,11 @@ class DiscountRateTest extends TestCase
         $actualResult = discountRateByMembershipType('silver');
         $this->assertEquals($expectedResult, $actualResult);
     }
+
+    function testWithInvalidMemberTypeWillThrowException()
+    {
+        $this->expectException(UnexpectedValueException::class);
+        $this->expectExceptionMessage('invalid membership type');
+        discountRateByMembershipType('invalidMemberType');
+    }
 }
