@@ -1,0 +1,16 @@
+{
+    "name": "trinhhung/discount-rate",
+    "description": "Example apply TDD step by step",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^8.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hưng Trịnh",
+            "email": "trinhduchung@gmail.com"
+        }
+    ],
+    "require": {}
+}
