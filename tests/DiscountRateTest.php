@@ -10,4 +10,11 @@ class DiscountRateTest extends TestCase
         $actualResult = discountRateByMembershipType('platinum');
         $this->assertEquals($expectedResult, $actualResult);
     }
+
+    function testWithGoldMemberWillDiscountTenPercent()
+    {
+        $expectedResult = 0.1;
+        $actualResult = discountRateByMembershipType('gold');
+        $this->assertEquals($expectedResult, $actualResult);
+    }
 }
