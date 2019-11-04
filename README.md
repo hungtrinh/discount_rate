@@ -15,6 +15,7 @@
 
 <!-- /TOC -->
 
+Code sample for article [Write unit test after an existing production code may be burn your money](https://medium.com/@trinhduchung/write-unit-test-after-an-existing-production-code-may-be-burn-your-money-1737cf45fc56)
 Please run step by step after checkout code
 
 ## Install phpunit
@@ -44,7 +45,7 @@ $ git log --oneline --graph --decorate
 $ git checkout a590862
 Note: switching to 'a590862'.
 
-$ vendor/bin/phpunit --testdox tests
+$ vendor/bin/phpunit --testdox --colors tests
 PHPUnit 8.4.2 by Sebastian Bergmann and contributors.
 
 Discount Rate
