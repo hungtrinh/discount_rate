@@ -31,4 +31,12 @@ class DiscountRateTest extends TestCase
         $this->expectExceptionMessage('invalid membership type');
         discountRateByMembershipType('invalidMemberType');
     }
+
+    function testWithNotOnBlackFridayThenNoDiscount() {
+        $expectedResult = 0;
+        $notBlackFriday = DateTime::createFromFormat("Y-m-d", "2019-01-01");
+        $this->assertEquals($expectedResult, discountRateByMembershipType('platinum', $notBlackFriday));
+        $this->assertEquals($expectedResult, discountRateByMembershipType('gold', $notBlackFriday));
+        $this->assertEquals($expectedResult, discountRateByMembershipType('silver', $notBlackFriday));
+    }
 }
