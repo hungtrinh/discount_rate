@@ -14,6 +14,6 @@
     ],
     "require": {},
     "scripts": {
-        "test": "phpunit --testdox tests"
+        "test": "phpunit --testdox --colors tests"
     }
 }

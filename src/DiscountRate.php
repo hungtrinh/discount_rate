@@ -1,7 +1,5 @@
 <?php
-use DateTimeImmutable;
-
-function isNotBlackFriday(DateTimeImmutable $currentDate) {
+function isNotBlackFriday(\DateTimeInterface $currentDate) {
     $isNotFriday = 5 !== (int) $currentDate->format('N');
     $isNotNovember = 11 !== (int) $currentDate->format('n');
     $dayOfMonth = (int) $currentDate->format('j');
@@ -9,7 +7,7 @@ function isNotBlackFriday(DateTimeImmutable $currentDate) {
     return $isNotBlackFriday;
 }
 
-function discountRateByMembershipType($membershipType, DateTimeImmutable $currentDate) {
+function discountRateByMembershipType($membershipType, \DateTimeInterface $currentDate) {
     if (isNotBlackFriday($currentDate)) return 0;
     if ('platinum' === $membershipType) return 0.15;
     if ('gold' === $membershipType) return 0.1;

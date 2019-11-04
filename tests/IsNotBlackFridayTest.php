@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . "/../src/DiscountRate.php";
 Use PHPUnit\Framework\TestCase;
-Use DateTimeImmutable; 
 
 class IsNotBlackFridayTest extends TestCase
 {
@@ -14,7 +13,7 @@ class IsNotBlackFridayTest extends TestCase
         foreach ($dateRange as $date) {
             $isBlackFriday = '2019-11-29' === $date->format('Y-m-d') ;
             if ($isBlackFriday) continue;
-            yield $date->format('l, Y-m-d') => [$date];
+            yield $date->format('Y-m-d, l') => [$date];
         }
     }
     
@@ -23,11 +22,11 @@ class IsNotBlackFridayTest extends TestCase
      *
      * @return void
      */
-    function testIsNotBlackFridayWillReturnTrueOnNonBlackFriday(DateTimeImmutable $currentDate) {
+    function testWillReturnTrueOnNonBlackFriday(DateTimeImmutable $currentDate) {
         $this->assertTrue(isNotBlackFriday($currentDate));
     }
 
-    function testIsNotBlackFridayWillReturnFalseWithDataSetBlackFriday20191129() {
+    function testWillReturnFalseWithDataSetBlackFriday20191129() {
         $blackFriday = DateTimeImmutable::createFromFormat('Y-m-d', '2019-11-29');
         $this->assertFalse(isNotBlackFriday($blackFriday));
     }

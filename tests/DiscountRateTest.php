@@ -1,8 +1,6 @@
 <?php
 require_once __DIR__ . "/../src/DiscountRate.php";
 Use PHPUnit\Framework\TestCase;
-Use DateTimeImmutable;
-
 class DiscountRateTest extends TestCase
 {
     function testWithPlatinumMemberWillDiscountFifteenPercent()
