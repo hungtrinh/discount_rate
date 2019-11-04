@@ -1,8 +1,5 @@
 <?php
-function discountRateByMembershipType($membershipType, $currentDate = null) {
-    if ( null === $currentDate) {
-        $currentDate = DateTime::createFromFormat('Y-m-d', '2019-11-29');
-    }
+function discountRateByMembershipType($membershipType, DateTime $currentDate) {
     $isNotFriday = 5 !== (int) $currentDate->format('N');
     $isNotNovember = 11 !== (int) $currentDate->format('n');
     $dayOfMonth = (int) $currentDate->format('j');
